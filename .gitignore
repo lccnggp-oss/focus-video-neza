@@ -1,2 +1,9 @@
-# Local Netlify folder
-.netlify
+# Videos e imágenes - no subir a GitHub
+*.mp4
+*.mov
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
