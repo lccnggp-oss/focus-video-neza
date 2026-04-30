@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto y Video — Cine Documental de Bodas y XV</title>
+    <meta name="description" content="Productora cinematográfica en Nezahualcóyotl. Especialistas en capturar historias reales con equipo 4K y drones en CDMX y EdoMex.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --gold: #d4af37; --gold-light: #e0be4f; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+        .text-gold {color: #d4af37;}
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f1d582 50%, #a17e1a 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(0,0,0,0.6); }
+        
+        /* Animación de brillo para botones */
+        .shine { position: relative; overflow: hidden; }
+        .shine::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-25deg); transition: 0.6s;
+        }
+        .shine:hover::before { left: 150%; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#d4af37] selection:text-black">
+
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Focus a la IZQUIERDA (texto) -->
+                <a href="#inicio" class="serif text-2xl tracking-[0.2em] font-bold group">
+                    <span class="text-[#d4af37] group-hover:text-white transition-colors">VIDEO</span> DRON
+                </a>
+                
+                <!-- Menú de navegación centrado (solo en desktop) -->
+                <div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.2em] font-medium">
+                    <a href="#servicios" class="hover:text-[#d4af37] transition">Servicios</a>
+                    <a href="#portafolio" class="hover:text-[#d4af37] transition">Potafolio</a>
+                    <a href="#paquetes" class="hover:text-[#d4af37] transition">Paquetes</a>
+                    <a href="#contacto" class="px-5 py-2.5 border border-[#d4af37]/40 text-[#d4af37] rounded-full hover:bg-[#d4af37] hover:text-black transition-all">Cotizar Evento</a>
+                </div>
+
+                <!-- LOGO IMAGEN en esquina SUPERIOR DERECHA (importante) -->
+                <img src="logo.png" alt="Focus Logo" class="absolute top-5 left-6 w-[100px] md:w-[120px] z-50">
+
+                <!-- Botón menú mobile -->
+                <button id="menu-btn" class="md:hidden text-[#d4af37]">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black hidden flex-col items-center justify-center gap-8 text-2xl serif">
+        <button id="close-menu" class="absolute top-6 right-6 text-[#d4af37]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="#servicios" class="mobile-link">Servicios</a>
+        <a href="#portafolio" class="mobile-link">Portafolio</a>
+        <a href="#paquetes" class="mobile-link">Paquetes</a>
+        <a href="#contacto" class="mobile-link text-[#d4af37]">Contacto</a>
+    </div>
+
+    <!-- HERO SECTION CON TU VIDEO DRON.MP4 ORIGINAL -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video de Fondo (tu boda.mp4) -->
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="boda.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Capa oscura para legibilidad -->
+        <div class="absolute inset-0 bg-black/50 z-1"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-1"></div>
+        
+        <div class="relative z-10 text-center px-6" data-aos="fade-up" data-aos-duration="1500">
+            <span class="inline-block mb-4 text-[#d4af37] tracking-[0.4em] text-[10px] uppercase font-semibold">Cinematografía Documental • Neza</span>
+            <h1 class="serif text-6xl md:text-8xl lg:text-[110px] leading-none mb-8">
+                No grabamos videos,<br>
+                <span class="gold-gradient italic">creamos recuerdos.</span>
+            </h1>
+            <p class="text-zinc-300 text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide mb-12">
+                Capturamos tus momentos más importantes en la mejor calidad con tecnología 4K, dron y cámara 360°.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#portafolio" class="shine px-10 py-4 bg-white text-black rounded-full font-semibold uppercase text-xs tracking-widest hover:bg-[#d4af37] transition-colors">Ver Películas</a>
+                <a href="#paquetes" class="px-10 py-4 border border-white/20 rounded-full font-semibold uppercase text-xs tracking-widest hover:border-[#d4af37] transition-all">Nuestros Precios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="py-12 bg-zinc-950 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl serif text-[#d4af37]">+500</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500">Historias contadas</p>
+            </div>
+            <div>
+                <p class="text-3xl serif text-[#d4af37]">4K</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500">Resolución Cine</p>
+            </div>
+            <div>
+                <p class="text-3xl serif text-[#d4af37]">100%</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500">Clientes Felices</p>
+            </div>
+            <div>
+                <p class="text-3xl serif text-[#d4af37]">18 Años</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500">De Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+                <div class="max-w-xl" data-aos="fade-right">
+                    <h2 class="serif text-5xl md:text-6xl mb-6 leading-tight">Especialistas en<br><span class="text-[#d4af37]">Momentos Reales</span></h2>
+                    <p class="text-zinc-400 text-lg">Utilizamos técnicas de cine documental para que tu video no se sienta actuado, sino vivido.</p>
+                </div>
+                <div class="md:text-right" data-aos="fade-left">
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-zinc-500">Nuestra Tecnología</span>
+                    <p class="text-sm text-zinc-300 mt-2">Sony Alpha 4K • Drones DJI • Audio RØDE</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="group p-10 bg-zinc-900/30 border border-white/5 rounded-[40px] hover:border-[#d4af37]/40 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-8 w-16 h-16 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center text-[#d4af37] group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 21l-8.228-9.228a5 5 0 117.072-7.072L12 5.657l1.157-1.157a5 5 0 117.072 7.072L12 21z"/></svg>
+                    </div>
+                    <h3 class="serif text-3xl mb-4">Bodas de Autor</h3>
+                    <p class="text-zinc-400 leading-relaxed">Nuestra especialidad. Cobertura desde el "getting ready" hasta el último baile con estilo cinematográfico y elegante.</p>
+                </div>
+                <div class="group p-10 bg-zinc-900/30 border border-white/5 rounded-[40px] hover:border-[#d4af37]/40 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-8 w-16 h-16 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center text-[#d4af37] group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h3 class="serif text-3xl mb-4">XV Años Film</h3>
+                    <p class="text-zinc-400 leading-relaxed">Videos dinámicos y frescos. Incluimos sesión previa tipo videoclip y tomas épicas con dron para el vals.</p>
+                </div>
+                <div class="group p-10 bg-zinc-900/30 border border-white/5 rounded-[40px] hover:border-[#d4af37]/40 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-8 w-16 h-16 bg-[#d4af37]/10 rounded-2xl flex items-center justify-center text-[#d4af37] group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="serif text-3xl mb-4 font-semibold">Eventos sociales</h3>
+                <p class="text-zinc-400 leading-relaxed text-[15px]">Cada celebración merece ser recordada. Bautizos, comuniones, cumpleaños, graduaciones y cualquier momento que valga la pena guardar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section id="portafolio" class="py-24 lg:py-32 px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <p class="text-[#d4af37] text-xs uppercase tracking-[0.25em] mb-4">Portafolio</p>
+                    <h2 class="serif text-4xl md:text-5xl">Trabajos recientes</h2>
+                </div>
+                <p class="text-zinc-400 max-w-md">Una selección de bodas y XV años filmados en Nezahualcóyotl, CDMX y Área Metropolitana.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[320px]">
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Boda" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 text-sm uppercase tracking-wider bg-black/60 px-3 py-1 rounded-full border border-white/10">Boda</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="XV2.jpg" alt="XV Años" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 text-sm uppercase tracking-wider bg-black/60 px-3 py-1 rounded-full border border-white/10">XV Años</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl sm:row-span-2">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop" alt="Boda Iglesia" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absoFlute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 text-sm uppercase tracking-wider bg-black/60 px-3 py-1 rounded-full border border-white/10">Boda en Iglesia</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="XV1.jpg" alt="XV VALS" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 text-sm uppercase tracking-wider bg-black/60 px-3 py-1 rounded-full border border-white/10">XV VALS</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Evento Corporativo" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 text-sm uppercase tracking-wider bg-black/60 px-3 py-1 rounded-full border border-white/10">Corporativo</span>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Reel -->
+    <section id="reel" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-[#d4af37] text-xs uppercase tracking-[0.25em] mb-4">Showreel 2026</p>
+            <h2 class="serif text-4xl md:text-5xl mb-10">Mira nuestro trabajo en unos minutos</h2>
+            <div class="relative rounded-[24px] overflow-hidden border border-[#d4af37]/20 shadow-[0_0_80px_rgba(212,175,55,0.1)]">
+                <div class="aspect-video bg-black">
+                    <iframe class="w-full h-full" src="dron.mp4" type="video/mp4"title="Focus Video Neza Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes -->
+    <section id="paquetes" class="py-24 lg:py-32 px-6 bg-[#050505]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <p class="text-[#d4af37] text-xs uppercase tracking-[0.25em] mb-4">Inversión</p>
+            <h2 class="serif text-4xl md:text-5xl">Paquetes claros, sin letras chiquitas</h2>
+            <p class="text-zinc-400 mt-4">Precios en MXN. Apartas con 50%. Nos movemos en toda la zona Metropolitana y CDMX.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 items-start">
+            <!-- Esencial -->
+            <div class="group bg-zinc-900/40 border border-zinc-800 rounded-[28px] p-8 transition-all duration-500 hover:bg-gradient-to-b hover:from-[#d4af37]/15 hover:to-transparent hover:border-[#d4af37]/40 hover:shadow-[0_0_60px_rgba(212,175,55,0.15)] hover:-mt-4 hover:mb-4">
+                <h3 class="serif text-2xl group-hover:text-[#d4af37] transition-colors">Esencial</h3>
+                <div class="mt-4 flex items-baseline gap-2">
+                    <span class="text-4xl font-light group-hover:text-[#d4af37] transition-colors">$6,900</span>
+                    <span class="text-zinc-500">MXN</span>
+                </div>
+                <p class="text-sm text-zinc-500 mt-2">Ideal para eventos íntimos</p>
+                <ul class="mt-8 space-y-3 text-[15px] text-zinc-300">
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> 6 horas de cobertura</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> 1 videógrafo profesional</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Video highlight 3-4 min</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Entrega digital Full HD</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> 100 Fotos digitales</li>
+                </ul>
+                <a href="https://wa.me/525518121391?text=Me%20interesa%20el%20paquete%20Esencial" target="_blank" class="mt-8 block text-center py-3 rounded-full border border-zinc-700 group-hover:border-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-black transition-all duration-500 text-sm uppercase tracking-wider">Elegir Esencial</a>
+            </div>
+
+            <!-- Premium (ya tiene el estilo dorado por defecto, pero también tendrá hover) -->
+            <div class="group relative bg-gradient-to-b from-[#d4af37]/15 to-transparent border border-[#d4af37]/40 rounded-[28px] p-8 shadow-[0_0_60px_rgba(212,175,55,0.15)] lg:-mt-4 lg:mb-4 transition-all duration-500 hover:shadow-[0_0_80px_rgba(212,175,55,0.3)] hover:border-[#f1d582]">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#d4af37] text-black text-[11px] uppercase tracking-widest rounded-full font-medium">Más Popular</div>
+                <h3 class="serif text-2xl text-[#d4af37]">Premium</h3>
+                <div class="mt-4 flex items-baseline gap-2">
+                    <span class="text-4xl font-light text-[#d4af37]">$11,500</span>
+                    <span class="text-zinc-500">MXN</span>
+                </div>
+                <p class="text-sm text-zinc-400 mt-2">El favorito para bodas y XV</p>
+                <ul class="mt-8 space-y-3 text-[15px] text-zinc-200">
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> 10 horas de cobertura</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> 2 videógrafos + dron</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> Highlight 5-6 min + ceremonia</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> Video vertical para redes</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> Entrega en 4K + USB</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37]">✓</span> 150 Fotos digitales</li>
+                </ul>
+                <a href="https://wa.me/525518121391?text=Me%20interesa%20el%20paquete%20Premium" target="_blank" class="mt-8 block text-center py-3 rounded-full bg-[#d4af37] text-black font-medium hover:bg-[#e0be4f] transition text-sm uppercase tracking-wider">Elegir Premium</a>
+            </div>
+
+            <!-- Cine -->
+            <div class="group bg-zinc-900/40 border border-zinc-800 rounded-[28px] p-8 transition-all duration-500 hover:bg-gradient-to-b hover:from-[#d4af37]/15 hover:to-transparent hover:border-[#d4af37]/40 hover:shadow-[0_0_60px_rgba(212,175,55,0.15)] hover:-mt-4 hover:mb-4">
+                <h3 class="serif text-2xl group-hover:text-[#d4af37] transition-colors">Cine</h3>
+                <div class="mt-4 flex items-baseline gap-2">
+                    <span class="text-4xl font-light group-hover:text-[#d4af37] transition-colors">$18,900</span>
+                    <span class="text-zinc-500">MXN</span>
+                </div>
+                <p class="text-sm text-zinc-500 mt-2">Producción completa</p>
+                <ul class="mt-8 space-y-3 text-[15px] text-zinc-300">
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Jornada completa (12h)</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> 3 videógrafos + dron</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Same Day Edit</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Sesión pre-boda / pre-XV</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> Película 15-20 min + teasers</li>
+                    <li class="flex gap-3"><span class="text-[#d4af37] group-hover:text-[#f1d582] transition-colors">✓</span> 200 Fotos digitales</li>
+                </ul>
+                <a href="https://wa.me/525518121391?text=Me%20interesa%20el%20paquete%20Cine" target="_blank" class="mt-8 block text-center py-3 rounded-full border border-zinc-700 group-hover:border-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-black transition-all duration-500 text-sm uppercase tracking-wider">Elegir Cine</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- TESTIMONIOS -->
+<section class="py-24 px-6 bg-[#050505] border-y border-white/5">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14" data-aos="fade-up">
+            <span class="text-gold text-[10px] uppercase tracking-[.35em] block mb-4">Testimonios</span>
+            <h2 class="serif text-4xl md:text-5xl font-semibold">Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-zinc-900/40 border border-white/7 rounded-2xl p-8 transition-colors hover:border-[#d4af37]/30" data-aos="fade-up" data-aos-delay="50">
+                <div class="flex gap-1 text-gold text-sm mb-5">★★★★★</div>
+                <p class="text-lg leading-relaxed text-zinc-200 serif italic">"No queríamos el típico video de boda. Focus capturó hasta las lágrimas de mi papá. Lloramos otra vez al verlo. Profesionales, puntuales y súper creativos."</p>
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-gold text-sm font-medium serif">M</div>
+                    <div><p class="text-sm font-medium">Mariana &amp; Luis</p><p class="text-xs text-zinc-500">Boda · Jardín Neza · Dic 2023</p></div>
+                </div>
+            </div>
+            <div class="bg-zinc-900/40 border border-white/7 rounded-2xl p-8 transition-colors hover:border-[#d4af37]/30" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex gap-1 text-gold text-sm mb-5">★★★★★</div>
+                <p class="text-lg leading-relaxed text-zinc-200 serif italic">"El video de los XV de mi hija quedó de película. El dron, el vals, todo. Mis familiares de USA dijeron que parecía Hollywood. 100% recomendados."</p>
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-gold text-sm font-medium serif">H</div>
+                    <div><p class="text-sm font-medium">Familia Hernández</p><p class="text-xs text-zinc-500">XV Años · Salón Los Arcos · Jun 2024</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-24 lg:py-36 px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div data-aos="fade-right">
+            <span class="text-gold text-[10px] uppercase tracking-[.35em] block mb-4">Quiénes somos</span>
+            <h2 class="serif text-4xl md:text-5xl font-semibold leading-tight mb-6">Nacidos en Neza,<br><span class="text-gold">contamos historias reales</span></h2>
+            <div class="gold-line mb-8"></div>
+            <p class="text-zinc-400 text-[15px] leading-relaxed mb-5">Somos un equipo de cineastas de Nezahualcóyotl apasionados por capturar emociones genuinas. Desde 2006 hemos documentado más de 500 eventos con la misma dedicación que pondríamos en una producción de cine.</p>
+            <p class="text-zinc-400 text-[15px] leading-relaxed mb-5">No creemos en los guiones ni las poses. Creemos en estar en el lugar correcto, con el equipo correcto, esperando el momento que nadie más vio.</p>
+            <p class="text-zinc-400 text-[15px] leading-relaxed">Tecnología 4K, drones DJI y audio profesional — pero sobre todo: atención personalizada desde la primera llamada hasta que recibes tu película.</p>
+            <div class="mt-10 grid grid-cols-3 gap-6">
+                <div class="border-t border-[#d4af37]/30 pt-4"><p class="serif text-3xl text-gold font-semibold">+500</p><p class="text-[11px] text-zinc-500 uppercase tracking-wider mt-1">Eventos</p></div>
+                <div class="border-t border-[#d4af37]/30 pt-4"><p class="serif text-3xl text-gold font-semibold">8 años</p><p class="text-[11px] text-zinc-500 uppercase tracking-wider mt-1">Experiencia</p></div>
+                <div class="border-t border-[#d4af37]/30 pt-4"><p class="serif text-3xl text-gold font-semibold">4K</p><p class="text-[11px] text-zinc-500 uppercase tracking-wider mt-1">Resolución</p></div>
+            </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+            <div class="aspect-[4/5] rounded-[32px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=900&auto=format&fit=crop" alt="Equipo Focus Video filmando" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-black border border-[#d4af37]/20 rounded-2xl p-5" style="backdrop-filter:blur(8px)">
+                <p class="text-gold text-[10px] uppercase tracking-wider mb-1">Basados en</p>
+                <p class="text-sm font-medium">Nezahualcóyotl, Edo. Méx.</p>
+                <p class="text-xs text-zinc-500 mt-0.5">Viajamos a todo México</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-32 px-6 bg-zinc-950">
+        <div class="max-w-5xl mx-auto border border-white/10 rounded-[50px] overflow-hidden grid md:grid-cols-2">
+            <div class="p-12 bg-zinc-900 flex flex-col justify-between">
+                <div>
+                    <h2 class="serif text-5xl mb-6 italic text-[#d4af37]">Agendemos<br>tu fecha.</h2>
+                    <p class="text-zinc-400">Estamos basados en Neza, pero viajamos a cualquier parte de México para capturar tu historia.</p>
+                </div>
+                <div class="mt-12 space-y-4">
+                    <a href="https://wa.me/525518121391?text=Hola%2C%20me%20interesa%20cotizar%20mi%20evento%20%F0%9F%8E%AC%20los%20vi%20en%20su%20p%C3%A1gina" target="_blank" class="flex items-center gap-4 text-sm font-light hover:text-[#d4af37] transition-colors group">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    WhatsApp: 55 1812 1391
+</a>
+                    <a href="https://instagram.com/focus.video.dron" target="_blank" class="flex items-center gap-4 text-sm font-light hover:text-[#d4af37] transition-colors group">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#E1306C] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+    Instagram: @focus.video.dron
+</a>
+                </div>
+            </div>
+            <form class="p-12 space-y-6" onsubmit="return false;">
+    <input id="f-nombre" type="text" placeholder="Tu nombre" class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#d4af37] transition-colors">
+    <select id="f-evento" class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#d4af37] transition-colors text-zinc-500">
+        <option value="">Tipo de Evento</option>
+        <option class="bg-black">Boda</option>
+        <option class="bg-black">XV Años</option>
+        <option class="bg-black">Bautizo</option>
+        <option class="bg-black">Comunión</option>
+        <option class="bg-black">Graduación</option>
+        <option class="bg-black">Cumpleaños</option>
+        <option class="bg-black">Otro</option>
+    </select>
+    <input id="f-fecha" type="date" class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#d4af37] transition-colors text-zinc-500">
+    <button onclick="enviarWA()" class="shine w-full py-5 bg-[#d4af37] text-black font-bold uppercase text-[10px] tracking-[0.3em] rounded-xl hover:bg-[#e0be4f] transition-colors">
+        💬 Cotizar por WhatsApp
+    </button>
+    <p class="text-center text-zinc-600 text-[11px]">Te respondemos en menos de 2 horas ⚡</p>
+</form>
+
+<script>
+function enviarWA() {
+    const nombre = document.getElementById('f-nombre').value.trim();
+    const evento = document.getElementById('f-evento').value;
+    const fecha  = document.getElementById('f-fecha').value;
+
+    if (!nombre || !evento) {
+        alert('Por favor ingresa tu nombre y tipo de evento.');
+        return;
+    }
+
+    const texto =
+        `Hola Focus Video 👋 los vi en su página web.\n\n` +
+        `📌 *Nombre:* ${nombre}\n` +
+        `🎬 *Evento:* ${evento}\n` +
+        `📅 *Fecha:* ${fecha || 'Por definir'}\n\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `Para cotizarte mejor, ¿me podrías decir?\n\n` +
+        `📦 *¿Qué paquete te interesa?*\n` +
+        `   • Esencial ($6,900)\n` +
+        `   • Premium ($11,500)\n` +
+        `   • Cine ($18,900)\n\n` +
+        `👥 *¿Cuántos invitados aproximado?*\n` +
+        `   R: \n\n` +
+        `📍 *¿En qué municipio/ciudad es el evento?*\n` +
+        `   R: \n\n` +        
+        `🔍 *¿Cómo nos encontraste?*\n` +
+        `   • Instagram\n` +
+        `   • Recomendación\n` +
+        `   • Google\n` +
+        `   • TikTok\n` +
+        `   • Otro\n`;
+
+    window.open(`https://wa.me/525518121391?text=${encodeURIComponent(texto)}`, '_blank');
+}
+</script>
+        </div>
+    </section>
+    
+    <footer class="py-20 text-center border-t border-white/5">
+        <p class="serif text-3xl tracking-widest mb-8">FOCUS <span class="text-[#d4af37]">VIDEO</span> NEZA</p>
+        <div class="flex justify-center gap-8 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+            <a href="#" class="hover:text-white transition">Términos</a>
+            <a href="#" class="hover:text-white transition">Privacidad</a>
+            <a href="#" class="hover:text-white transition">Instagram</a>
+        </div>
+        <p class="mt-12 text-[9px] text-zinc-700 uppercase tracking-widest">© 2026 Ciudad Nezahualcóyotl, Estado de México.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('glass');
+            }
+        });
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('menu-btn');
+        const close = document.getElementById('close-menu');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        if (btn && close && menu) {
+            btn.onclick = () => menu.classList.remove('hidden');
+            close.onclick = () => menu.classList.add('hidden');
+            links.forEach(l => l.onclick = () => menu.classList.add('hidden'));
+        }
+    </script>
+</body>
+</html>
