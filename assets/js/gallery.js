@@ -22,20 +22,20 @@ const EVENTS = {
         name: 'Evento - Sábado 14 de Junio',
         date: '14 de Junio, 2025',
         photos: [
-            'https://via.placeholder.com/900x600?text=Foto+1',
-            'https://via.placeholder.com/900x600?text=Foto+2',
-            'https://via.placeholder.com/900x600?text=Foto+3',
-            'https://via.placeholder.com/900x600?text=Foto+4',
-            'https://via.placeholder.com/900x600?text=Foto+5'
+            'https://images.unsplash.com/photo-1516449386315-e6aeeecda3d0?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1514613535308-eb5400a7d290?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1516450360452-9312f5e1b937?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=900&h=600&fit=crop'
         ]
     },
     'evento_demo': {
         name: 'Galería de Demostración',
         date: 'Galería de prueba',
         photos: [
-            'https://via.placeholder.com/900x600?text=Demo+Foto+1',
-            'https://via.placeholder.com/900x600?text=Demo+Foto+2',
-            'https://via.placeholder.com/900x600?text=Demo+Foto+3'
+            'https://images.unsplash.com/photo-1493306261481-6cc47bc34344?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1516514377365-8e82aa27abe7?w=900&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1502634612514-8b86a5f70ce1?w=900&h=600&fit=crop'
         ]
     }
 };
@@ -243,9 +243,9 @@ function downloadPhoto() {
     link.href = photos[currentPhotoIndex];
     link.download = `focus-dron-foto-${currentPhotoIndex + 1}.jpg`;
     
-    // Para URLs de placeholder, mostrar mensaje alternativo
-    if (photos[currentPhotoIndex].includes('placeholder')) {
-        alert('Esta es una foto de demostración. En la galería real, podrás descargar las fotos directamente.');
+    // Para la galería de demostración, mostrar mensaje
+    if (currentEventId === 'evento_demo') {
+        alert('Esta es una foto de demostración. En tu galería real con fotos, podrás descargar directamente.');
         return;
     }
     
