@@ -22,20 +22,22 @@ const EVENTS = {
         name: 'Evento - Sábado 14 de Junio',
         date: '14 de Junio, 2025',
         photos: [
-            'https://images.unsplash.com/photo-1516449386315-e6aeeecda3d0?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1514613535308-eb5400a7d290?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1516450360452-9312f5e1b937?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=900&h=600&fit=crop'
+            'assets/demo-photos/demo-1.svg',
+            'assets/demo-photos/demo-2.svg',
+            'assets/demo-photos/demo-3.svg',
+            'assets/demo-photos/demo-4.svg',
+            'assets/demo-photos/demo-5.svg'
         ]
     },
     'evento_demo': {
         name: 'Galería de Demostración',
         date: 'Galería de prueba',
         photos: [
-            'https://images.unsplash.com/photo-1493306261481-6cc47bc34344?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1516514377365-8e82aa27abe7?w=900&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1502634612514-8b86a5f70ce1?w=900&h=600&fit=crop'
+            'assets/demo-photos/demo-1.svg',
+            'assets/demo-photos/demo-2.svg',
+            'assets/demo-photos/demo-3.svg',
+            'assets/demo-photos/demo-4.svg',
+            'assets/demo-photos/demo-5.svg'
         ]
     }
 };
