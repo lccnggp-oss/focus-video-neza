@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - Focus Dron</title>
+    <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>🎬 Focus Dron</h1>
+                <p>Galería de Fotos</p>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" class="btn-login">Acceder</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Galería Principal -->
+    <div id="galleryScreen" class="gallery-container" style="display: none;">
+        <!-- Header -->
+        <header class="gallery-header">
+            <div class="header-left">
+                <h1>🎬 Focus Dron</h1>
+            </div>
+            <div class="header-right">
+                <span id="clientName" class="client-name"></span>
+                <button onclick="handleLogout()" class="btn-logout">Salir</button>
+            </div>
+        </header>
+
+        <!-- Información del Evento -->
+        <div class="event-info">
+            <h2 id="eventName"></h2>
+            <p id="eventDate"></p>
+        </div>
+
+        <!-- Carrusel -->
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <!-- Las fotos se cargan aquí -->
+                </div>
+                
+                <!-- Controles del Carrusel -->
+                <button class="carousel-btn prev" onclick="prevPhoto()">❮</button>
+                <button class="carousel-btn next" onclick="nextPhoto()">❯</button>
+            </div>
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators" id="indicators"></div>
+        </div>
+
+        <!-- Información de la Foto -->
+        <div class="photo-info">
+            <p id="photoCounter"></p>
+            <p id="photoDescription"></p>
+        </div>
+
+        <!-- Opciones de Descarga -->
+        <div class="download-section">
+            <button onclick="downloadPhoto()" class="btn-download">📥 Descargar Foto</button>
+            <button onclick="downloadAll()" class="btn-download-all">📦 Descargar Todo</button>
+        </div>
+    </div>
+
+    <script src="assets/js/gallery.js"></script>
+</body>
+</html>
