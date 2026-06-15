@@ -22,11 +22,26 @@ const EVENTS = {
         name: 'Evento - Sábado 14 de Junio',
         date: '14 de Junio, 2025',
         photos: [
-            'assets/demo-photos/demo-1.svg',
-            'assets/demo-photos/demo-2.svg',
-            'assets/demo-photos/demo-3.svg',
-            'assets/demo-photos/demo-4.svg',
-            'assets/demo-photos/demo-5.svg'
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(1).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(2).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(3).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(4).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(5).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(6).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(7).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(8).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(9).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(10).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(11).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(12).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(13).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(14).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(15).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(16).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(17).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(18).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(19).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(20).jpg'
         ]
     },
     'evento_demo': {
