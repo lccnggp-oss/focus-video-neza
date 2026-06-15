@@ -3,9 +3,9 @@
 // evento_id -> nombre, fecha, fotos[]
 
 const USERS = {
-    'cliente1': {
+    'ana': {
         password: 'pass123',
-        eventId: 'evento_20250614'
+        eventId: 'evento_20260524'
     },
     'cliente2': {
         password: 'pass123',
@@ -18,36 +18,37 @@ const USERS = {
 };
 
 const EVENTS = {
-    'evento_20250614': {
-        name: 'Evento - Sábado 14 de Junio',
-        date: '14 de Junio, 2025',
+    'evento_20260524': {
+        name: 'Evento - Domingo 24 de Mayo',
+        date: '24 de Mayo, 2026',
         photos: [
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(1).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(2).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(3).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(4).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(5).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(6).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(7).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(8).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(9).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(10).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(11).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(12).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(13).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(14).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(15).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(16).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(17).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(18).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(19).jpg',
-            'assets/24-MAY-2026_GRADUACION_ANA/DSC_100-(20).jpg'
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(1).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(2).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(3).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(4).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(5).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(6).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(7).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(8).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(9).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(10).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(11).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(12).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(13).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(14).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(15).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(16).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(17).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(18).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(19).jpg',
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(20).jpg'
         ]
     },
     'evento_demo': {
         name: 'Galería de Demostración',
         date: 'Galería de prueba',
         photos: [
+            'assets/24-MAY-2026_GRADUACION_ANA/DSC_0100-(1).jpg',
             'assets/demo-photos/demo-1.svg',
             'assets/demo-photos/demo-2.svg',
             'assets/demo-photos/demo-3.svg',
