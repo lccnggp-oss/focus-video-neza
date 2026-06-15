@@ -1,6 +1,4 @@
-/* Importar Inter desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
 :root {
   --bg: #0a0a0a;
   --surface: #1a1a1a;
@@ -9,48 +7,33 @@
   --border: #333;
   --radius: 8px;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
 }
-
 #app {
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
-
-/* Header */
 header {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 #header-logo {
   height: 50px;
-  width: auto;
 }
-
-/* Navegación por pestañas */
 #tabs-nav {
   display: flex;
   overflow-x: auto;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
 }
-
 .tab-btn {
   background: transparent;
   border: none;
@@ -58,25 +41,20 @@ header {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  white-space: nowrap;
   border-radius: var(--radius);
   transition: 0.2s;
 }
-
 .tab-btn.active {
   background: var(--surface);
   color: var(--text);
   font-weight: 600;
 }
-
-/* Grid de miniaturas */
 #gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 8px;
   margin-bottom: 2rem;
 }
-
 .thumbnail-item {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -85,20 +63,13 @@ header {
   background: var(--surface);
   cursor: pointer;
 }
-
 .thumbnail-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform 0.3s;
 }
-
-.thumbnail-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Botón de selección (check circular) */
+.thumbnail-item:hover img { transform: scale(1.05); }
 .select-check {
   position: absolute;
   top: 8px;
@@ -112,9 +83,7 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  transition: 0.2s;
 }
-
 .select-check::after {
   content: "✓";
   color: white;
@@ -123,24 +92,16 @@ header {
   transform: scale(0.5);
   transition: 0.2s;
 }
-
 .thumbnail-item.selected .select-check {
   background: var(--accent);
   border-color: var(--accent);
 }
-
 .thumbnail-item.selected .select-check::after {
   opacity: 1;
   transform: scale(1);
   color: #000;
 }
-
-/* Sentinel para scroll infinito */
-#scroll-sentinel {
-  height: 20px;
-}
-
-/* Barra de selección flotante */
+#scroll-sentinel { height: 20px; }
 #selection-bar {
   position: fixed;
   bottom: 1.5rem;
@@ -155,18 +116,10 @@ header {
   gap: 1rem;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: all 0.3s;
   cursor: pointer;
 }
-
-#selection-bar.hidden {
-  display: none;
-}
-
-#selection-count {
-  font-weight: 600;
-}
-
+#selection-bar.hidden { display: none; }
+#selection-count { font-weight: 600; }
 #selection-actions {
   display: flex;
   flex-wrap: wrap;
@@ -176,11 +129,7 @@ header {
   padding: 0.5rem;
   border-radius: var(--radius);
 }
-
-#selection-actions.hidden {
-  display: none;
-}
-
+#selection-actions.hidden { display: none; }
 #selection-list {
   width: 100%;
   height: 60px;
@@ -192,7 +141,6 @@ header {
   font-size: 0.85rem;
   resize: vertical;
 }
-
 button, .tab-btn, #whatsapp-btn {
   background: var(--accent);
   color: #000;
@@ -203,17 +151,8 @@ button, .tab-btn, #whatsapp-btn {
   cursor: pointer;
   transition: 0.2s;
 }
-
-button:hover, #whatsapp-btn:hover {
-  opacity: 0.9;
-}
-
-#whatsapp-btn {
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* Lightbox */
+button:hover, #whatsapp-btn:hover { opacity: 0.9; }
+#whatsapp-btn { text-decoration: none; display: inline-block; }
 #lightbox {
   position: fixed;
   inset: 0;
@@ -223,23 +162,17 @@ button:hover, #whatsapp-btn:hover {
   align-items: center;
   justify-content: center;
 }
-
-#lightbox.hidden {
-  display: none;
-}
-
+#lightbox.hidden { display: none; }
 .lightbox-content {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
 }
-
 #lightbox-img {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
 }
-
 #watermark-canvas {
   position: absolute;
   top: 0;
@@ -248,7 +181,6 @@ button:hover, #whatsapp-btn:hover {
   height: 100%;
   pointer-events: none;
 }
-
 #lightbox-close {
   position: absolute;
   top: 20px;
@@ -258,8 +190,6 @@ button:hover, #whatsapp-btn:hover {
   cursor: pointer;
   z-index: 101;
 }
-
-/* Modal de autenticación */
 #auth-modal {
   position: fixed;
   inset: 0;
@@ -269,7 +199,6 @@ button:hover, #whatsapp-btn:hover {
   align-items: center;
   justify-content: center;
 }
-
 .modal-content {
   background: var(--surface);
   padding: 2rem;
@@ -278,12 +207,10 @@ button:hover, #whatsapp-btn:hover {
   max-width: 320px;
   width: 90%;
 }
-
 .modal-logo {
   height: 60px;
   margin-bottom: 1rem;
 }
-
 #password-input {
   width: 100%;
   padding: 0.5rem;
@@ -294,14 +221,7 @@ button:hover, #whatsapp-btn:hover {
   border-radius: var(--radius);
   font-size: 1rem;
 }
-
-#auth-error {
-  color: #ff6b6b;
-  margin-top: 0.5rem;
-}
-
+#auth-error { color: #ff6b6b; margin-top: 0.5rem; }
 @media (max-width: 600px) {
-  #gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
+  #gallery-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 }
