@@ -1,1 +1,72 @@
+name: Auto Galería Focus Dron
 
+on:
+  push:
+    paths:
+      - 'clientes/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar Pillow
+        run: pip install Pillow
+
+      - name: Detectar cliente modificado
+        id: cliente
+        run: |
+          CLIENTE=$(git diff --name-only HEAD^ HEAD | grep '^clientes/' | cut -d'/' -f2 | head -n1)
+          echo "cliente=$CLIENTE" >> $GITHUB_OUTPUT
+          echo "Cliente detectado: $CLIENTE"
+
+      - name: Generar thumbnails y gallery.json
+        if: steps.cliente.outputs.cliente != ''
+        run: |
+          python <<EOF
+          import os, json
+          from PIL import Image
+          CLIENTE = "${{ steps.cliente.outputs.cliente }}"
+          RUTA = f"clientes/{CLIENTE}"
+          codigo = "focus2024"
+          if os.path.exists(f"{RUTA}/gallery.json"):
+              with open(f"{RUTA}/gallery.json") as f:
+                  codigo = json.load(f).get("codigo", codigo)
+          data = {"codigo": codigo, "sesiones": {}}
+          for sesion in os.listdir(RUTA):
+              path_sesion = os.path.join(RUTA, sesion)
+              if not os.path.isdir(path_sesion): continue
+              fotos = []
+              for archivo in os.listdir(path_sesion):
+                  if archivo.startswith('thumb_') or not archivo.lower().endswith(('.jpg','.jpeg','.png')): continue
+                  fotos.append(archivo)
+                  thumb_path = os.path.join(path_sesion, f"thumb_{archivo}")
+                  if not os.path.exists(thumb_path):
+                      img = Image.open(os.path.join(path_sesion, archivo))
+                      img.thumbnail((400, 400))
+                      img.save(thumb_path, "JPEG", quality=80)
+          if fotos: data["sesiones"][sesion] = sorted(fotos)
+          with open(f"{RUTA}/gallery.json", "w") as f: json.dump(data, f, indent=2)
+          EOF
+
+      - name: Commit thumbnails
+        if: steps.cliente.outputs.cliente != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add clientes/${{ steps.cliente.outputs.cliente }}/**/thumb_*.jpg
+          git add clientes/${{ steps.cliente.outputs.cliente }}/gallery.json
+          git diff --staged --quiet || git commit -m "Auto: thumbs para ${{ steps.cliente.outputs.cliente }}"
+          git push
