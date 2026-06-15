@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Focus Dron</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="../../assets/gallery.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <a href="../../index.html"><img src="../../logo.png" alt="Focus Dron" id="header-logo"></a>
+    </header>
+    <nav id="tabs-nav"></nav>
+    <main id="gallery-grid"></main>
+    <div id="scroll-sentinel"></div>
+    <div id="selection-bar" class="hidden">
+      <span id="selection-count">0 fotos seleccionadas para Book</span>
+      <div id="selection-actions" class="hidden">
+        <textarea id="selection-list" readonly></textarea>
+        <button id="copy-list-btn">Copiar lista</button>
+        <a id="whatsapp-btn" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <button id="download-selected-btn">Descargar seleccionadas (ZIP)</button>
+      </div>
+    </div>
+    <div id="lightbox" class="hidden">
+      <span id="lightbox-close">&times;</span>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Foto ampliada">
+        <canvas id="watermark-canvas"></canvas>
+      </div>
+    </div>
+    <div id="auth-modal">
+      <div class="modal-content">
+        <img src="../../logo.png" alt="Focus Dron" class="modal-logo">
+        <h2>Acceso restringido</h2>
+        <p>Ingresa el código para ver la galería</p>
+        <input type="password" id="password-input" placeholder="Código">
+        <button id="submit-password">Acceder</button>
+        <p id="auth-error" class="hidden"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
